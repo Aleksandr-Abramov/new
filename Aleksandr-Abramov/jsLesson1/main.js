@@ -51,8 +51,6 @@ if (number <= 9 && number > 0) {
   alert("отрицательное двузначное число");
 } else if (number >= -999 && number < -99) {
   alert("отрицательное трехзначное число");
-} else if (number === null) {
-  alert("отмена");
 } else {
   alert("Не тот диапазон");
 }
@@ -96,7 +94,6 @@ if (number2 === 0) {
 (1 - 'плохо', 2 - 'неудовлетворительно', 3 - 'удовлетворительно', 4 - 'хорошо', 5 - 'отлично').
 
 */
-
 alert("Дано целое число в диапазоне 1 - 5. Вывести\nстроку - словесное описание соответствующей оценки\n(1 - 'плохо', 2 - 'неудовлетворительно', 3 - 'удовлетворительно', 4 - 'хорошо', 5 - 'отлично').");
 
 var number3 = +prompt("Введите число", "0");
@@ -105,6 +102,7 @@ if (number3 === 1) {
   alert("плохо");
 } else if (number3 === 2) {
   alert("неудовлетворительно");
+
 } else if (number3 === 3) {
   alert("удовлетворительно");
 } else if (number3 === 4) {
@@ -134,8 +132,7 @@ var number4 = +prompt("Введите число", "0");
 var number5 = +prompt("Введите число", "0");
 var number6 = +prompt("Введите число", "0");
 
-if (number4 === number5 || number4 === number6 ||
-    number6 === number5 || bumber6 === number4) {
+if (number4 === number5 || number4 === number6 || number5 === number6) {
   alert("True");
 } else {
   alert("False");
