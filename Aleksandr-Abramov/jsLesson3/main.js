@@ -1,5 +1,6 @@
 /*1 Дана строка, изображающая целое число.
 Вывести сумму цифр этого числа.*/
+/*
 var s = prompt("Введите строку").toLowerCase();
 
 var str = s.match(/\d/g);
@@ -9,10 +10,11 @@ for (var i = 0; i < str.length; i++) {
   result += parseInt(str[i]);
 }
 console.log(result);
-
+*/
 /*2 Дана строка S и символ C.
 Удвоить каждое вхождение символа C в строку S.*/
 //Решение 1
+/*
 var s = prompt("Введите строку").toLowerCase();
 var c = prompt("Введите символ").toLowerCase();
 
@@ -27,7 +29,7 @@ for (var i = 0; i < s.length; i++) {
   }
 }
 var str = s.join("");
-console.log(str);
+console.log(str);*/
 //Решение 2.
 // var s = prompt("Введите строку").toLowerCase();
 // var c = prompt("Введите символ").toLowerCase();
@@ -44,10 +46,10 @@ console.log(str);
 	- содержит обязательно один из неалфавитных
 	символов (например, !, $, #, %).
   */
-var regX2 = new RegExp(/[a-zA-z]{5,}\d{3,}[!@#$%^&*]{1,}/ig)
-var pass = prompt("");
-if (regX2.test(pass)) {
-console.log("пароль из 5 букв, 3 цифр и 1 !@#$%^&* символа.");
-} else {
-  console.log("Ошибка!");
-}
+// var regX2 = new RegExp(//ig)
+// var pass = prompt("");
+// if (regX2.test(pass)) {
+// console.log("пароль из 5 букв, 3 цифр и 1 !@#$%^&* символа.");
+// } else {
+//   console.log("Ошибка!");
+// }

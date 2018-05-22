@@ -6,6 +6,7 @@ B = [-3, -7, -100, -33]
 в один массив C добавив
 массив B в конец(в начало) A.
 */
+
 var a = [ 12, 4, 3, 10, 1, 20 ];
 var b = [-3, -7, -100, -33];
 //B в конец A
@@ -20,28 +21,14 @@ console.log(c);
 Удалить из него наименьшее и наибольшее значение.
 */
 
-var arr1 = [1,4,5,6,7,12];
-var maxValue = 0;
-for (var i = 0; i < arr1.length; i++) {
-  if (arr1[i] > maxValue) {
-    maxValue = arr1[i];
-  }
-}
+var arr2 = [12,4,3,10,1,20];
 
-var minValue = maxValue;
-for (var i = 0; i < arr1.length; i++) {
-  if (arr1[i] < minValue) {
-    minValue = arr1[i];
-  }
-}
-
-var arr2 = arr1.filter(function(elem) {
-  if (elem < maxValue && elem !== minValue) {
-    return true;
-  } else {
-    return false;
-  }
+arr2.sort(function (a,b) {
+ return  a-b;
 });
+arr2.shift();
+arr2.pop();
+
 
 console.log(arr2);
 /*
@@ -53,18 +40,32 @@ console.log(arr2);
 */
 //Сортировка пузырьком
 
-var arr3 = [12, 4, 3, 10, 1];
+// var arr3 = [12, 4, 3, 10, 1];
+//
+//  for (var i = 0; i < arr3.length; i++) { //выполняем цикл по количеству элементов в массиве.
+//   for (var j = 0; j < arr3.length  -1; j++) { //цикл для проверки текущего элемента со следующим
+//     if (arr3[j] > arr3[j + 1]) {// если текущий элемент больше следующего.
+//       var temp = arr3[j + 1]; //создаем переменную, сохраняем значение следующего элемента.
+//       arr3[j + 1] = arr3[j]; //меняем местами элемента. В следующий сохраняем значение текущего.
+//       arr3[j] = temp; //в текущий сохраняем значение предыдущего, из вспомогательной переменной.
+//     }
+//   }
+//  }
+// console.log(arr3);
+//Сортировка сравнением.
+var a = [43, 54, 6, 42, 4,30,20];
 
- for (var i = 0; i < arr3.length; i++) { //выполняем цикл по количеству элементов в массиве.
-  for (var j = 0; j < arr3.length  -1; j++) { //цикл для проверки текущего элемента со следующим
-    if (arr3[j] > arr3[j + 1]) {// если текущий элемент больше следующего.
-      var temp = arr3[j + 1]; //создаем переменную, сохраняем значение следующего элемента.
-      arr3[j + 1] = arr3[j]; //меняем местами элемента. В следующий сохраняем значение текущего.
-      arr3[j] = temp; //в текущий сохраняем значение предыдущего, из вспомогательной переменной.
-    }
-  }
- }
-console.log(arr3);
+var temp; // буферная переменная
+for (var i = 0; i < a.length - 1; i++) { // пробегаем в цикле до предпоследнего элемента.
+  for (var j = i + 1 ; j < a.length; j++) { // пробегаем циклом начиная с 1 до последнего.
+     if(a[i] > a[j]) { //если сравниваемый элемент больше следующего.
+       temp = a[j]; // сохраняем меньший элемент в буферную переменную.
+       a[j] = a[i]; //  меняем элементы местами.
+       a[i] = temp; // начальному элементу присваиваем наименьшее значение.
+     }
+   }
+}
+console.log(a);
 
 /*
 2. Задача.
@@ -80,29 +81,29 @@ var area =
 */
 // var arr4 = [ 1, null, 0, null, 1, null, null, null, null];
 
-
-var arr = [ 1, null, 0, null, 1, null, null, null, null ];
-var table = "<table><tr>";
-var td = [];
-for (var i = 0; i < arr.length; i++) {
-  if (arr[i] === 1) {
-     td.push("<td>X</td>");
-  } else if (arr[i] === 0) {
-    td.push("<td>0</td>");
-  } else if (arr[i] === null) {
-    td.push("<td></td>");
-  }
-  if(i === 3) {
-    td[2] += "</tr><tr>";
-
-  } else if (i === 6) {
-     td[5] += "</tr><tr>";
-  }
-  else if (i === 8) {
-     td[8] += "</tr></table>";
-  }
-}
-var tr = td.join("");
-table += tr;
-
-document.write(table);
+//
+// var arr = [ 1, null, 0, null, 1, null, null, null, null ];
+// var table = "<table><tr>";
+// var td = [];
+// for (var i = 0; i < arr.length; i++) {
+//   if (arr[i] === 1) {
+//      td.push("<td>X</td>");
+//   } else if (arr[i] === 0) {
+//     td.push("<td>0</td>");
+//   } else if (arr[i] === null) {
+//     td.push("<td></td>");
+//   }
+//   if(i === 3) {
+//     td[2] += "</tr><tr>";
+//
+//   } else if (i === 6) {
+//      td[5] += "</tr><tr>";
+//   }
+//   else if (i === 8) {
+//      td[8] += "</tr></table>";
+//   }
+// }
+// var tr = td.join("");
+// table += tr;
+//
+// document.write(table);
