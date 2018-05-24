@@ -46,10 +46,12 @@ console.log(str);*/
 	- содержит обязательно один из неалфавитных
 	символов (например, !, $, #, %).
   */
-// var regX2 = new RegExp(//ig)
-// var pass = prompt("");
-// if (regX2.test(pass)) {
-// console.log("пароль из 5 букв, 3 цифр и 1 !@#$%^&* символа.");
-// } else {
-//   console.log("Ошибка!");
-// }
+var regX2 = new RegExp(/[a-zA-z]{5,}/ig);
+var regX3 = new RegExp(/[0-9]{3,}/ig);
+var regX4 = new RegExp(/[!@#$%^&*]{1,}/ig);
+var pass = prompt("");
+if (regX2.test(pass) && regX3.test(pass) && regX4.test(pass)) {
+console.log("пароль из 5 букв, 3 цифр и 1 !@#$%^&* символа.");
+} else {
+  console.log("Ошибка!");
+}

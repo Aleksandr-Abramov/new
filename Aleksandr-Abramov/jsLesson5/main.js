@@ -25,9 +25,10 @@ console.log(a);
 (неповторяющиеся) элементы.
 Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].
 */
-var a = [1,2,5,6,8,9];
+var a = [1,2,2,5,,undefined,2,6,8,9];
 var b = [6,2,3,3,246,1,214,2,5];
 var c = a.concat(b);
+c = c.filter(function(n){ return n != undefined });
 
 for (var i = 0; i < c.length; i++) {
   for (var j = i + 1; j < c.length; j++) {
