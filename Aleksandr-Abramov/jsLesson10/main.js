@@ -25,14 +25,14 @@ function Backet() {
     this._arrProducts.push(product);
     this._sumGoods += product.price;
     this._numberOfGoods++;
-    return this._arrProducts;
+    return "Добавлен продукт: " + product.name + " " + product.price;
 
   }
   this.getSumm = function () {
-    return this._sumGoods;
+    return "Сумма всех продуктов: " + this._sumGoods;
   }
   this.getNumberOfGoods = function () {
-    return this._numberOfGoods;
+    return "Количество товаров: " + this._numberOfGoods;
   }
 
 }
