@@ -15,7 +15,7 @@ var student = {
 }
 
 function content(student) {
-   return student.firstName + student.lastName + student.age +" "+ student.interest + student.institute;
+  return student.firstName + student.lastName + student.age + " " + student.interest + student.institute;
 }
 var a = content(student);
 console.log(a);
@@ -25,15 +25,17 @@ console.log(a);
 (неповторяющиеся) элементы.
 Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].
 */
-var a = [1,2,2,5,,undefined,2,6,8,9];
-var b = [6,2,3,3,246,1,214,2,5];
+var a = [1, 2, 2, 5, , undefined, 2, 6, 8, 9];
+var b = [6, 2, 3, 3, 246, 1, 214, 2, 5];
 var c = a.concat(b);
-c = c.filter(function(n){ return n != undefined });
+c = c.filter(function(n) {
+  return n != undefined
+});
 
 for (var i = 0; i < c.length; i++) {
   for (var j = i + 1; j < c.length; j++) {
     if (c[i] === c[j]) {
-     c.splice(i,1);
+      c.splice(i, 1);
       i--;
     } else {
       continue;
@@ -59,7 +61,7 @@ function fibo(num) {
     return 0;
   } else {
     for (var i = 3; i <= num; i++) {
-    var c = a + b;
+      var c = a + b;
       a = b;
       b = c;
       arrFibo.push(b);
@@ -78,8 +80,48 @@ console.log(fibo(8));
 т. е. грядущий год должен вычисляться программно.
 */
 
+
+
+
 function counter() {
-  var date = new Date(2018,0,1,0,0,0,0);
-  console.log(date);
+  var today = new Date()
+  var hours = new Date().getHours();
+  var minutes = new Date().getMinutes();
+  hours = 23 - hours;
+  minutes = 59 - minutes;
+  msPerDay = 1000*60*60*24;
+  days = new Date(today.getFullYear() + 1, 0, 1);
+  days = Math.round((days - today) / msPerDay);
+  var strDays = String(days);
+  var decline = strDays.slice(-1);
+  var endingDays;
+  var endingHours;
+  var endingMinutes;
+
+  if (Number(decline) === 1) {
+    endingDays = " день ";
+  } else if (Number(decline) <= 4) {
+    endingDays = " дня ";
+  } else {
+    endingDays = " дней ";
+  }
+
+  if (hours === 1) {
+    endingHours = " час ";
+  } else if (hours <= 4 ) {
+    endingHours = " часа ";
+  } else {
+    endingHours = " часов ";
+  }
+
+  if (minutes % 10 == 1) {
+    endingMinutes = " минута ";
+  } else if ( minutes % 10 == 2 || minutes % 10 == 3 || minutes % 10 == 4) {
+    endingMinutes = " минуты ";
+  } else {
+    endingMinutes = " минут ";
+  }
+
+  return "До нового года оствлось: " + days + endingDays + hours + endingHours + "и " + minutes + endingMinutes;
 }
-counter()
+console.log(counter());

@@ -21,17 +21,17 @@ function Backet() {
   this._arrProducts = [];
   this._numberOfGoods = 0;
   this._sumGoods = 0;
-  this.addProduct = function (product) {
+  this.addProduct = function(product) {
     this._arrProducts.push(product);
     this._sumGoods += product.price;
     this._numberOfGoods++;
     return "Добавлен продукт: " + product.name + " " + product.price;
 
   }
-  this.getSumm = function () {
+  this.getSumm = function() {
     return "Сумма всех продуктов: " + this._sumGoods;
   }
-  this.getNumberOfGoods = function () {
+  this.getNumberOfGoods = function() {
     return "Количество товаров: " + this._numberOfGoods;
   }
 
@@ -66,7 +66,7 @@ function Man(name, age, sex, interests) {
   this.age = age;
   this.sex = sex;
   this.interests = interests;
-  this.toString = function () {
+  this.toString = function() {
     return `Человек: ${this.name}. Возраст: ${this.age} лет. Пол: ${this.sex}. Интересы: ${this.interests}`;
   }
 }
@@ -77,7 +77,7 @@ console.log(man.toString());
 function Student(institute) {
   Man.apply(this, arguments);
   this.institute = institute;
-  this.toString = function () {
+  this.toString = function() {
     return `Человек: ${this.name}. Возраст: ${this.age} лет. Пол: ${this.sex}. Интересы: ${this.interests} Обучается в ${this.institute}`;
   }
 }
@@ -95,18 +95,18 @@ console.log(student.toString());
 */
 
 function User() {
-  this.toString = function () {
+  this.toString = function() {
     return this._name;
   }
 }
 
-User.createAnomim = function () {
+User.createAnomim = function() {
   var user = new User();
   user._name = "Аноним";
   return user;
 }
 
-User.createUserDate = function (obj) {
+User.createUserDate = function(obj) {
   var user = new User();
   user._name = obj.name;
   user._age = obj.age;
@@ -114,7 +114,10 @@ User.createUserDate = function (obj) {
 }
 
 var user1 = User.createAnomim();
-var user2 = User.createUserDate({name: "Саша", age: 23});
+var user2 = User.createUserDate({
+  name: "Саша",
+  age: 23
+});
 console.log(user1);
 console.log(user2);
 
@@ -125,6 +128,20 @@ console.log(user2);
 они используются. Информацию можно найти в документации
 (справочные системы по js, статьи по программированию и т.п.).
 */
+/*
+Перенести в ОО-код следующий пример из реального мира:
+- есть курсы, учителя и ученики
+- у каждого курса есть свой учитель
+- у каждого учителя есть своя группа учеников
+Определите какие объекты есть в этом примере, какие у них
+свойства и какие методы, как эти объекты будут между собой
+взаимодействовать, например, к курсу можно добавить учителя.
+Создайте все необходимые шаблоны объектов (классы) и приведите
+пример их использования.
+*/
+
+
+
 /*
 №1.
 
@@ -170,18 +187,12 @@ https://developer.mozilla.org/ru/docs/Web/API/HTMLAudioElement
 
 №4.
 
-Date
+Map
+Map – коллекция для хранения записей вида ключ:значение.
 
-Сводка
-Создаёт экземпляр объекта Date, представляющего собой момент времени. Объекты даты Date основываются на значении количества миллисекунд, прошедших с 1 января 1970 года в часовом поясе UTC.
+В отличие от объектов, в которых ключами могут быть только строки, в Map ключом может быть произвольное значение, например:
 
-Синтаксис
-new Date();
-new Date(value);
-new Date(dateString);
-new Date(year, month[, day[, hour[, minute[, second[, millisecond]]]]]);
-
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date;
+https://learn.javascript.ru/set-map
 
 №5
 
@@ -216,17 +227,14 @@ https://developer.mozilla.org/ru/docs/Web/API/Event/Event
 
 №7
 
-Number
+Intl.Collator
 
-Объект Number является объектом-обёрткой, позволяющей вам работать с числовыми значениями. Объект Number создаётся через конструктор Number().
+Объект Intl.Collator является конструктором сортировщиков — объектов, включающих языко-зависимое сравнение строк.
 
-Синтаксис
-new Number(value)
-Параметры
-value
-Числовое значение, которое примет объект после создания.
+new Intl.Collator([locales[, options]])
+Intl.Collator.call(this[, locales[, options]])
 
-https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Collator
 
 №8
 
