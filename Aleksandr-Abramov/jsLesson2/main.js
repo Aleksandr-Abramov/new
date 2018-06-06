@@ -125,7 +125,7 @@ X и Y так, чтобы в X оказалось меньшее
 */
 var str = prompt("Введите строку. Проверка на палиндром", "");
 str = str.toLowerCase().replace(/ /g, '');
-if (str.split('').reverse().join('') == str) {
+if (str.split('').reverse().join('') === str) {
 console.log(str + " Палендром");
 } else {
   console.log(str + " Не палиндром");
